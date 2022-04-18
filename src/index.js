@@ -1,5 +1,9 @@
 import './style/style.scss';
+import {Game} from './game'
 
 const body = document.getElementById("body")
 body.classList.add('body')
-body.innerHTML = '<p>start</p>'
+
+new Game()
+
+export {body}

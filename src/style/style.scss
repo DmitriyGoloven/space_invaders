@@ -1,6 +1,63 @@
 
-.body{
-  background-color: wheat;
-  text-align: center;
-  margin-top: 100px;
+.body {
+  height: 500px;
+  width: 700px;
+  border: 4px solid black;
+  margin: 10px;
+
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 0;
+}
+
+.shot {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  background: red;
+  margin: 10px 15px;
+
+}
+
+.alien {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  background: blue;
+}
+
+
+.element1 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background-color: black;
+  z-index: 3;
+}
+
+.element2 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background-color: black;
+  z-index: 2;
+}
+
+.element3 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  background-color: black;
+  z-index: 4;
+
 }
