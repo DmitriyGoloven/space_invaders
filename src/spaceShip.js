@@ -1,13 +1,14 @@
 import {Element} from "./element";
-import {Shot} from "./shoot";
+import {Shot} from "./shot";
 import {MOVE_LEFT, MOVE_RIGHT, MOVE_TOP, MOVE_BOTTOM} from "./game";
+import {body} from "./index";
 
 class Spaceship extends Element {
     lastShoot = null
 
     constructor(x, y) {
-        super(x, y, ['element', 'square']);
-        this.crateShip()
+        super(x, y);
+        this.node = this.crateShip()
     }
 
     move(direction) {
@@ -27,7 +28,7 @@ class Spaceship extends Element {
         }
     }
 
-    shoot() {
+    shot() {
         const time = new Date().getTime()
 
         if (this.lastShoot && time - this.lastShoot < 400) {
@@ -44,16 +45,22 @@ class Spaceship extends Element {
 
     crateShip() {
 
-        const ship = document.querySelector('div')
+        const ship = document.createElement('div')
+        ship.classList.add('square')
         const element1 = document.createElement('div')
         element1.classList.add('element1')
         const element2 = document.createElement('div')
         element2.classList.add('element2')
         const element3 = document.createElement('div')
         element3.classList.add('element3')
+        const element4 = document.createElement('div')
+        element4.classList.add('element4')
         ship.appendChild(element1)
         ship.appendChild(element2)
         ship.appendChild(element3)
+        ship.appendChild(element4)
+        body.appendChild(ship)
+        return ship
     }
 }
 

@@ -10,8 +10,8 @@ class Game {
     elements = []
 
     constructor() {
-        this.elements.push(new Spaceship(11, 465));
-        this.addAliens(2800)
+        this.elements.push(new Spaceship(15, 470));
+        this.addAliens(4500)
         this.addEvents()
         this.drawLoop()
         this.updateLoop()
@@ -38,7 +38,7 @@ class Game {
                     continue
                 }
                 if (element instanceof Spaceship) {
-                    const shot = element.shoot()
+                    const shot = element.shot()
                     shot && this.elements.push(shot)
                 }
 
@@ -56,7 +56,6 @@ class Game {
 
     addEvents() {
         document.addEventListener('keypress', (e) => {
-            console.log(e)
             switch (e.key) {
                 case '8':
                     this.moveElements(MOVE_TOP);
@@ -76,7 +75,8 @@ class Game {
     }
 
     addAliens(time) {
-        setInterval(() => {
+        setTimeout(()=>{clearInterval(aliens)},15000)
+       const aliens =  setInterval(() => {
             this.elements.push(new Alien(35, 10));
             this.elements.push(new Alien(135, 10));
             this.elements.push(new Alien(235, 10));
@@ -84,8 +84,11 @@ class Game {
             this.elements.push(new Alien(435, 10));
             this.elements.push(new Alien(535, 10));
             this.elements.push(new Alien(635, 10));
+            console.log(this.elements)
         }, time)
     }
+
+
 }
 
 export {Game}
