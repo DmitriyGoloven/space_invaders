@@ -1,11 +1,12 @@
 import {Element} from "./element";
 import {body} from "./index";
 
-
 class Alien extends Element {
 
     static speed = 0.8
-    
+
+    isDead = false
+
     constructor(x, y) {
         super(x, y);
         this.node = this.crateAlien()
@@ -20,7 +21,6 @@ class Alien extends Element {
             return this.isOut = true
         }
     }
-
 
     crateAlien() {
         const alien = document.createElement('div')
@@ -38,7 +38,6 @@ class Alien extends Element {
         const alien6 = document.createElement('div')
         alien6.classList.add('alien6')
 
-
         alien.appendChild(alien1)
         alien.appendChild(alien2)
         alien.appendChild(alien3)
@@ -46,9 +45,9 @@ class Alien extends Element {
         alien.appendChild(alien5)
         alien.appendChild(alien6)
         body.appendChild(alien)
+
         return alien
     }
-
 }
 
 export {Alien}

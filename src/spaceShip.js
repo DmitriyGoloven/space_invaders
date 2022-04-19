@@ -5,6 +5,7 @@ import {body} from "./index";
 
 class Spaceship extends Element {
     lastShoot = null
+    isDead = false
 
     constructor(x, y) {
         super(x, y);
@@ -31,12 +32,15 @@ class Spaceship extends Element {
     shot() {
         const time = new Date().getTime()
 
-        if (this.lastShoot && time - this.lastShoot < 400) {
+        if (this.lastShoot && time - this.lastShoot < 500) {
             return null
         }
 
         this.lastShoot = time
-        return new Shot(this.x, this.y)
+
+        if (!this.isDead) {
+            return new Shot(this.x, this.y)
+        }
     }
 
     isOutOfScreen() {

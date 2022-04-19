@@ -4,7 +4,6 @@
   width: 700px;
   border: 4px solid black;
   margin: 10px;
-
 }
 
 .square {
@@ -21,7 +20,6 @@
   background: black;
   border: 1px solid red;
   margin: 5px 25px;
-
 }
 
 .alien {
@@ -29,7 +27,6 @@
   height: 60px;
   position: fixed;
   z-index: 0;
-
 }
 
 .element1 {
@@ -37,7 +34,7 @@
   height: 19px;
   position: absolute;
   top: 20px;
-  left: 0px;
+  left: 0;
   background-color: black;
   border: 1px solid red;
   z-index: 7;
@@ -63,7 +60,6 @@
   background-color: black;
   border: 1px solid red;
   z-index: 9;
-
 }
 
 .element4 {
@@ -71,14 +67,13 @@
   height: 19px;
   position: absolute;
   border: 1px solid red;
-  top: 0px;
+  top: 0;
   left: 20px;
   background-color: black;
   z-index: 10;
-
 }
 
-.alien1,.alien2,.alien3,.alien4,.alien5,.alien6{
+.alien1, .alien2, .alien3, .alien4, .alien5, .alien6 {
   width: 19px;
   height: 19px;
   position: absolute;
@@ -86,33 +81,49 @@
   border: 1px solid red;
   z-index: 10;
 }
-.alien1{
-  top: 0px;
-  left: 0px;
+
+.alien1 {
+  top: 0;
+  left: 0;
 }
-.alien2{
-  top: 0px;
+
+.alien2 {
+  top: 0;
   left: 20px;
-
 }
-.alien3{
-  top: 0px;
+
+.alien3 {
+  top: 0;
   left: 40px;
-
 }
 
-.alien4{
+.alien4 {
   top: 20px;
   left: 20px;
 }
 
-.alien5{
+.alien5 {
   top: 40px;
-  left: 0px;
+  left: 0;
 }
 
-.alien6{
+.alien6 {
   top: 40px;
   left: 40px;
+}
 
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 300px;
+  border: 4px solid red;
+  margin-left: 200px;
+  margin-top: 150px;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  z-index: 15;
 }
