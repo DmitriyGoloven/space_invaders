@@ -147,7 +147,6 @@ class Game {
                 }
 
                 let aliens = this.elements.filter(element => element instanceof Alien && !element.isDead)
-                console.log(aliens)
                 if (aliens.length === 0) {
                     clearInterval(info)
                     this.resultWindow("YOU WIN!!!")

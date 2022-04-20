@@ -13,6 +13,7 @@ class Spaceship extends Element {
     }
 
     move(direction) {
+
         switch (direction) {
             case MOVE_LEFT:
                 this.x = this.x - 10
@@ -27,6 +28,7 @@ class Spaceship extends Element {
                 this.y = this.y + 10
                 break
         }
+
     }
 
     shot() {
