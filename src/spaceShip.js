@@ -12,19 +12,30 @@ class Spaceship extends Element {
         this.node = this.crateShip()
     }
 
-    move(direction) {
-
+    move(direction){
         switch (direction) {
             case MOVE_LEFT:
+                if (this.x < 20){
+                    this.x = this.x + 10
+                }
                 this.x = this.x - 10
                 break
             case MOVE_RIGHT:
+                if (this.x > 640){
+                    this.x = this.x - 10
+                }
                 this.x = this.x + 10
                 break
             case MOVE_TOP:
+                if (this.y < 20){
+                this.y = this.y + 10
+            }
                 this.y = this.y - 10
                 break
             case MOVE_BOTTOM:
+                if (this.y > 460){
+                    this.y = this.y - 10
+                }
                 this.y = this.y + 10
                 break
         }

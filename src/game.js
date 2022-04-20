@@ -47,7 +47,7 @@ class Game {
                 element.update && element.update()
             }
 
-            this.collision()
+
         }, 50)
     }
 
@@ -137,6 +137,8 @@ class Game {
         setTimeout(() => {
             let info = setInterval(() => {
 
+                this.collision()
+
                 let ship = this.elements.filter(element => element instanceof Spaceship)
                 if (ship[0].isDead) {
                     this.elements.forEach((element) => {
@@ -148,21 +150,21 @@ class Game {
 
                 let aliens = this.elements.filter(element => element instanceof Alien && !element.isDead)
                 if (aliens.length === 0) {
+                    ship[0].isDead = true
                     clearInterval(info)
                     this.resultWindow("YOU WIN!!!")
                 }
                 aliens.forEach((alien) => {
                     if (alien.y > 450) {
                         clearInterval(info)
+                        ship[0].isDead = true
                         this.elements.forEach((element) => {
                             element.remove()
                         })
                         this.resultWindow("The END")
-
                     }
                 })
-
-            }, 500)
+            }, 50)
         }, 5000)
     }
 
@@ -173,7 +175,7 @@ class Game {
         body.appendChild(result)
         setTimeout(() => {
             window.location.reload()
-        }, 3000)
+        }, 5000)
     }
 }
 
