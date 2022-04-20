@@ -8,6 +8,7 @@ class Shot extends Element {
     constructor(x, y) {
         super(x, y);
         this.node = this.crateShot()
+        this.draw()
     }
 
     update() {

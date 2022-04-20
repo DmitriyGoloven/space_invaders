@@ -10,6 +10,9 @@ class Spaceship extends Element {
     constructor(x, y) {
         super(x, y);
         this.node = this.crateShip()
+        this.draw()
+
+
     }
 
     move(direction){
@@ -44,6 +47,7 @@ class Spaceship extends Element {
 
     shot() {
         const time = new Date().getTime()
+
 
         if (this.lastShoot && time - this.lastShoot < 500) {
             return null

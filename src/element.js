@@ -3,12 +3,13 @@ class Element {
     y;
     node = document.createElement('div');
     isDead = false
+    isOut = false
 
 
     constructor(x = 0, y = 0) {
         this.x = x;
         this.y = y;
-        this.draw()
+
     }
 
     draw() {

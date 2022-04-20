@@ -10,6 +10,7 @@ class Alien extends Element {
     constructor(x, y) {
         super(x, y);
         this.node = this.crateAlien()
+        this.draw()
     }
 
     update() {

@@ -25,7 +25,7 @@ class Game {
             this.elements.forEach((element) => {
                 element.draw()
             })
-        }, 1000 / 50)
+        }, 1000 / 60)
     }
 
     updateLoop() {
@@ -47,7 +47,6 @@ class Game {
                 element.update && element.update()
             }
 
-
         }, 50)
     }
 
@@ -59,18 +58,18 @@ class Game {
     }
 
     addEvents() {
-        document.addEventListener('keypress', (e) => {
+        document.addEventListener('keydown', (e) => {
             switch (e.key) {
-                case '8':
+                case 'ArrowUp':
                     this.moveElements(MOVE_TOP);
                     break
-                case '5':
+                case 'ArrowDown':
                     this.moveElements(MOVE_BOTTOM);
                     break
-                case '4':
+                case 'ArrowLeft':
                     this.moveElements(MOVE_LEFT);
                     break
-                case '6':
+                case 'ArrowRight':
                     this.moveElements(MOVE_RIGHT);
                     break
             }
@@ -154,16 +153,21 @@ class Game {
                     clearInterval(info)
                     this.resultWindow("YOU WIN!!!")
                 }
-                aliens.forEach((alien) => {
-                    if (alien.y > 450) {
+
+                for (let i = 0; i < aliens.length; i++) {
+
+                    if (aliens[i].isOutOfScreen()) {
                         clearInterval(info)
                         ship[0].isDead = true
                         this.elements.forEach((element) => {
                             element.remove()
                         })
+
                         this.resultWindow("The END")
+                        break
                     }
-                })
+                }
+
             }, 50)
         }, 5000)
     }
