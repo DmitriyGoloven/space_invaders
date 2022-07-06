@@ -18,6 +18,7 @@ class Game {
         this.drawLoop()
         this.updateLoop()
         this.result()
+        this.drawButtons()
     }
 
     drawLoop() {
@@ -181,6 +182,34 @@ class Game {
             window.location.reload()
         }, 5000)
     }
+
+    drawButtons(){
+        const buttonLeft = document.createElement('button')
+        buttonLeft.classList.add('buttonLeft')
+        buttonLeft.textContent = "LEFT"
+        buttonLeft.addEventListener("pointerdown" , (e) => {this.moveElements(MOVE_LEFT)})
+        body.appendChild(buttonLeft)
+
+        const buttonRight = document.createElement('button')
+        buttonRight.classList.add('buttonRight')
+        buttonRight.textContent = "RIGHT"
+        buttonRight.addEventListener("pointerdown", () => {this.moveElements(MOVE_RIGHT)})
+        body.appendChild(buttonRight)
+
+        const buttonTop = document.createElement('button')
+        buttonTop.classList.add('buttonTop')
+        buttonTop.textContent = "TOP"
+        buttonTop.addEventListener("click", (e) => {this.moveElements(MOVE_TOP)})
+        body.appendChild(buttonTop)
+
+        const buttonBottom = document.createElement('button')
+        buttonBottom.classList.add('buttonBottom')
+        buttonBottom.textContent = "BOTTOM"
+        buttonBottom.addEventListener("click", (e) => {this.moveElements(MOVE_BOTTOM)})
+        body.appendChild(buttonBottom)
+
+    }
+
 }
 
 export {Game}
