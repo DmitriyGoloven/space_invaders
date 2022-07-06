@@ -10,6 +10,7 @@ const MOVE_BOTTOM = 'MOVE_BOTTOM'
 
 class Game {
     elements = []
+    move
 
     constructor() {
         this.elements.push(new Spaceship(70, 470));
@@ -183,29 +184,57 @@ class Game {
         }, 5000)
     }
 
-    drawButtons(){
+    drawButtons() {
         const buttonLeft = document.createElement('button')
         buttonLeft.classList.add('buttonLeft')
         buttonLeft.textContent = "LEFT"
-        buttonLeft.addEventListener("pointerdown" , (e) => {this.moveElements(MOVE_LEFT)})
+        buttonLeft.addEventListener("mousedown", (e) => {
+            this.move = setInterval(() => {
+                this.moveElements(MOVE_LEFT)
+            }, 50)
+        })
+        buttonLeft.addEventListener("mouseup", (e) => {
+            clearInterval(this.move)
+        })
         body.appendChild(buttonLeft)
 
         const buttonRight = document.createElement('button')
         buttonRight.classList.add('buttonRight')
         buttonRight.textContent = "RIGHT"
-        buttonRight.addEventListener("pointerdown", () => {this.moveElements(MOVE_RIGHT)})
+        buttonRight.addEventListener("mousedown", (e) => {
+            this.move = setInterval(() => {
+                this.moveElements(MOVE_RIGHT)
+            }, 50)
+        })
+        buttonRight.addEventListener("mouseup", (e) => {
+            clearInterval(this.move)
+        })
         body.appendChild(buttonRight)
 
         const buttonTop = document.createElement('button')
         buttonTop.classList.add('buttonTop')
         buttonTop.textContent = "TOP"
-        buttonTop.addEventListener("click", (e) => {this.moveElements(MOVE_TOP)})
+        buttonTop.addEventListener("mousedown", (e) => {
+            this.move = setInterval(() => {
+                this.moveElements(MOVE_TOP)
+            }, 50)
+        })
+        buttonTop.addEventListener("mouseup", (e) => {
+            clearInterval(this.move)
+        })
         body.appendChild(buttonTop)
 
         const buttonBottom = document.createElement('button')
         buttonBottom.classList.add('buttonBottom')
         buttonBottom.textContent = "BOTTOM"
-        buttonBottom.addEventListener("click", (e) => {this.moveElements(MOVE_BOTTOM)})
+        buttonBottom.addEventListener("mousedown", (e) => {
+            this.move = setInterval(() => {
+                this.moveElements(MOVE_BOTTOM)
+            }, 50)
+        })
+        buttonBottom.addEventListener("mouseup", (e) => {
+            clearInterval(this.move)
+        })
         body.appendChild(buttonBottom)
 
     }
