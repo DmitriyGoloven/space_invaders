@@ -187,7 +187,7 @@ class Game {
     drawButtons() {
         const buttonLeft = document.createElement('button')
         buttonLeft.classList.add('buttonLeft')
-        buttonLeft.textContent = "LEFT"
+        buttonLeft.textContent = "⇦"
         buttonLeft.addEventListener("pointerdown", (e) => {
             this.move = setInterval(() => {
                 this.moveElements(MOVE_LEFT)
@@ -200,7 +200,7 @@ class Game {
 
         const buttonRight = document.createElement('button')
         buttonRight.classList.add('buttonRight')
-        buttonRight.textContent = "RIGHT"
+        buttonRight.textContent = "⇨"
         buttonRight.addEventListener("pointerdown", (e) => {
             this.move = setInterval(() => {
                 this.moveElements(MOVE_RIGHT)
@@ -213,7 +213,7 @@ class Game {
 
         const buttonTop = document.createElement('button')
         buttonTop.classList.add('buttonTop')
-        buttonTop.textContent = "TOP"
+        buttonTop.textContent = "⇧"
         buttonTop.addEventListener("pointerdown", (e) => {
             this.move = setInterval(() => {
                 this.moveElements(MOVE_TOP)
@@ -226,7 +226,7 @@ class Game {
 
         const buttonBottom = document.createElement('button')
         buttonBottom.classList.add('buttonBottom')
-        buttonBottom.textContent = "BOTTOM"
+        buttonBottom.textContent = "⇩"
         buttonBottom.addEventListener("pointerdown", (e) => {
             this.move = setInterval(() => {
                 this.moveElements(MOVE_BOTTOM)

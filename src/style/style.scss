@@ -129,6 +129,7 @@
 }
 
 .buttonLeft{
+  text-align: left;
   top: 590px;
   left: 185px;
 
@@ -157,9 +158,10 @@ button{
   width: 100px;
   border: 4px solid black;
   background-color: gray;
+  text-align: right;
+  font-size: 12px;
   font-weight: bold;
   color: white;
-  text-align: center;
   text-shadow: 1px 1px 1px black;
   position: fixed;
   box-shadow: 3px 3px 3px gray;
